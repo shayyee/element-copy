@@ -6,7 +6,7 @@ module.exports = {
     mode: process.env.NODE_ENV,
     entry: "./examples/main.js",
     output: {
-        path: path.resolve(process.cwd(), "dist"),
+        path: path.resolve(process.cwd(), "dist"),  // process.cwd() == D:\myself\element-copy
         filename: "bundle.js",
     },
     devServer: {
@@ -14,6 +14,12 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(jsx?|babel|es6)$/,
+                include: process.cwd(),
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -49,7 +55,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Development',
             favicon: './public/favicon.ico',
-            template: 'public/index.html',
+            template: './public/index.html',
             filename: 'index.html',
             inject: true,
         })],

@@ -2,13 +2,16 @@
     <div id="app">
         <img alt="Vue logo" src="./logo.png" />
         <h1>Welcome to My Vue.js UI By WebPack!</h1>
+        <JSX></JSX>
     </div>
 </template>
 
 <script>
+import JSX from "./JSX.vue";
+
 export default {
     name: "App",
-    components: {},
+    components: {JSX},
 };
 </script>
 
