@@ -1,6 +1,7 @@
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
     mode: process.env.NODE_ENV,
@@ -52,6 +53,10 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
+        new ESLintPlugin({
+            fix: true, // 自动修复
+            extensions: ['js', 'vue'],
+        }),
         new HtmlWebpackPlugin({
             title: 'Development',
             favicon: './public/favicon.ico',

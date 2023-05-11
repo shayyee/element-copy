@@ -1,0 +1,12 @@
+*.sh
+*.md
+*.scss
+*.woff
+*.ttf
+
+coverage
+dist
+build
+public
+lib
+node_modules
