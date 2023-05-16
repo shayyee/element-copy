@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import MeUI from '../src/index'
+import MeUI from '../lib/me-vue-ui.common'
 import router from './router'
 import hljs from 'highlight.js'
 import demoBlock from './components/demo-block.vue'
@@ -19,7 +19,7 @@ router.afterEach(() => {
     console.log(blocks)
     Array.prototype.forEach.call(blocks, hljs.highlightBlock)
   })
-  // document.title = 'me-ui'
+  document.title = 'me-ui'
 })
 
 new Vue({
