@@ -13,6 +13,12 @@ module.exports = {
     devServer: {
         contentBase: './dist',
     },
+    resolve: {
+        // 自动解析引入模块的扩展
+        extensions: ['.js', '.vue', '.json'],
+        // 解析模块时应该搜索的目录
+        modules: ['node_modules'],
+    },
     module: {
         rules: [
             {
