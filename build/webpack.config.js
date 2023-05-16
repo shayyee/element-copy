@@ -14,6 +14,12 @@ module.exports = {
         contentBase: './dist',
     },
     resolve: {
+        alias: {
+            main: path.resolve(__dirname, '../src'),
+            packages: path.resolve(__dirname, '../packages'),
+            examples: path.resolve(__dirname, '../examples'),
+            'me-ui': path.resolve(__dirname, '../'),
+        },
         // 自动解析引入模块的扩展
         extensions: ['.js', '.vue', '.json'],
         // 解析模块时应该搜索的目录
@@ -42,6 +48,22 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: 'vue-loader',
+                        options: {
+                            compilerOptions: {
+                                preserveWhitespace: false,
+                            },
+                        },
+                    },
+                    {
+                        loader: path.resolve(__dirname, './md-loader/index.js'),
+                    },
+                ],
             },
             {
                 test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
