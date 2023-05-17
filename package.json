@@ -2,17 +2,26 @@
   "name": "element-copy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/me-vue-ui.common.js",
   "scripts": {
     "prettier": "prettier --write .",
     "clean": "rimraf node_modules",
     "build:dist": "cross-env NODE_ENV=development webpack --config  build/webpack.config.js",
+    "build:docs": "cross-env NODE_ENV=development webpack --config  build/webpack.docs.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.js",
     "dist": "webpack --config build/webpack.common.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keyword": [
+    "me-vue",
+    "vuejs",
+    "components",
+    "ui-kit"
+  ],
+  "author": "shayyee",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.6.12"
+  },
   "devDependencies": {
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
@@ -39,7 +48,6 @@
     "style-loader": "^0.23.1",
     "transliteration": "^2.3.5",
     "url-loader": "^1.0.1",
-    "vue": "^2.5.21",
     "vue-loader": "^15.7.0",
     "vue-router": "^3.5.1",
     "vue-template-compiler": "^2.5.21",
